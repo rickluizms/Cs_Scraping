@@ -3,7 +3,7 @@ sources = {
     'Nesha': {
         'url': 'https://neshastore.com',
         'type': '1',
-        'endpoints': '/nesha',
+        'endpoints': '/skin',
     },
 
     'ProSkins': {

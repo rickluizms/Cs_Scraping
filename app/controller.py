@@ -1,5 +1,6 @@
 from .core.scrap import Scrap
 from .core.parser import Parser
+from .services.services import Services
 
 
 
@@ -21,5 +22,6 @@ class Controller:
         return transf_data
     
     def Load(self, transf_data):
-        print(transf_data, '============ WORKS! ============')
-        return
+        client = Services(self.endpoints)
+        client.load(transf_data)
+        return 'success'
