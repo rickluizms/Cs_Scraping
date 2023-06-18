@@ -4,21 +4,24 @@ from .core.parser import Parser
 
 
 
+
 class Controller:
 
-    def __init__(self):
-        self.scraping = Scrap()
-        self.parser = Parser()
-
+    def __init__(self, src):
+        self.url = src['url']
+        self.type = src['type']
+        self.endpoints = src['endpoints']
+        
     def Extract(self):
-        scrap = self.scraping
+        scrap = Scrap(self.url, self.type)
         data = scrap.get()
         return data
 
-    def Trasnform(self, data):
-
-        return 
+    def Transform(self, data):
+        parser = Parser(self.type)
+        transf_data = parser.Run(data)
+        return transf_data
     
     def Load(self, transf_data):
-        
+        print(transf_data, '============ WORKS! ============')
         return
