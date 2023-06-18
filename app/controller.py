@@ -1,7 +1,5 @@
-
 from .core.scrap import Scrap
 from .core.parser import Parser
-
 
 
 
